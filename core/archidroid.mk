@@ -172,3 +172,10 @@ LOCAL_DISABLE_STRICT := \
 	libnvvisualizer \
 	libskia \
         libiprouteutil
+
+# Link binaries with Cortex-a15 string routines
+ifndef LOCAL_IS_HOST_MODULE
+  ifeq ($(filter $(DISABLE_CORTEX_STRINGS), $(LOCAL_MODULE)),)
+    my_ldflags += -L$(BUILD_SYSTEM)/../libs/$(TARGET_ARCH) -lbionic-a15
+  endif
+endif
