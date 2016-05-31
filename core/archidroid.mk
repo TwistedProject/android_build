@@ -39,7 +39,7 @@ ARCHIDROID_GCC_LDFLAGS := -Wl,-O3 -Wl,--as-needed -Wl,--gc-sections -Wl,--relax 
 # Flags below are applied to specific targets only, use them if your flag is not compatible for both compilers
 
 # We use GCC 4.9 for arm-linux-androideabi, so we don't have any extra flags for it
-ARCHIDROID_GCC_CFLAGS_32 := -mtune=cortex-a15
+ARCHIDROID_GCC_CFLAGS_32 := -mtune=cortex-a15 -mfpu=neon-vfpv4
 
 # We use GCC 4.9 for aarch64-linux-android, so we don't have any extra flags for it
 ifeq (arm,$(TARGET_ARCH))
@@ -59,7 +59,7 @@ ARCHIDROID_GCC_CPPFLAGS := $(ARCHIDROID_GCC_CFLAGS)
 
 # Flags passed to all C targets compiled with CLANG
 ifeq (arm,$(TARGET_ARCH))
-ARCHIDROID_CLANG_CFLAGS := -O3 -Qunused-arguments -Wno-unknown-warning-option -mtune=cortex-a57.cortex-a53 -march=armv8-a+crc
+ARCHIDROID_CLANG_CFLAGS := -O3 -Qunused-arguments -Wno-unknown-warning-option -mtune=cortex-a15 -mfpu=neon-vfpv4
 endif
 
 # Flags passed to CLANG preprocessor for C and C++

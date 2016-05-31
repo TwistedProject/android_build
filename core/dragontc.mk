@@ -73,7 +73,10 @@ DISABLE_POLLY_arm := \
   libRSCpuRef \
   libRS	\
   libRSDrive \
-  libart-compiler
+  libart-compiler \
+  libmcldTarget \
+  libv8 \
+  libc
 
 DISABLE_POLLY_arm64 := \
   libbccSupport \
