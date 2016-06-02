@@ -35,7 +35,7 @@ TARGET_$(combo_2nd_arch_prefix)ARCH_VARIANT := armv5te
 endif
 
 # Decouple NDK library selection with platform compiler version
-$(combo_2nd_arch_prefix)TARGET_NDK_GCC_VERSION := 4.9
+$(combo_2nd_arch_prefix)TARGET_NDK_GCC_VERSION := 5.3
 
 ifeq ($(strip $(TARGET_GCC_VERSION_EXP)),)
 $(combo_2nd_arch_prefix)TARGET_GCC_VERSION := 4.9
@@ -99,9 +99,7 @@ $(combo_2nd_arch_prefix)TARGET_GLOBAL_CFLAGS += \
 			-ffunction-sections \
 			-fdata-sections \
 			-funwind-tables \
-			-fstack-protector \
 			-Wa,--noexecstack \
-			-Werror=format-security \
 			-D_FORTIFY_SOURCE=2 \
 			-fno-short-enums \
 			-no-canonical-prefixes \
@@ -147,8 +145,6 @@ $(combo_2nd_arch_prefix)TARGET_GLOBAL_CPPFLAGS += -fvisibility-inlines-hidden
 # More flags/options can be added here
 $(combo_2nd_arch_prefix)TARGET_RELEASE_CFLAGS := \
 			-DNDEBUG \
-			-g \
-			-Wstrict-aliasing=2 \
 			-fgcse-after-reload \
 			-frerun-cse-after-loop \
 			-frename-registers
