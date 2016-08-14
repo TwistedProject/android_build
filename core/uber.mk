@@ -100,7 +100,10 @@ LOCAL_DISABLE_STRICT := \
 	libnvvisualizer \
 	libskia \
 	libiprouteutil \
-	libmmcamera_interface
+	libmmcamera_interface \
+fio \
+libbluetooth_jni \
+tcpdump
 
 LOCAL_FORCE_DISABLE_STRICT := \
 	libziparchive-host \
@@ -129,7 +132,10 @@ LOCAL_FORCE_DISABLE_STRICT := \
 	sensors.flounder \
 	libnvvisualizer \
 	libiprouteutil \
-	libmmcamera_interface
+	libmmcamera_interface \
+fio \
+libbluetooth_jni \
+tcpdump
 
 DISABLE_STRICT := \
 	-fno-strict-aliasing
